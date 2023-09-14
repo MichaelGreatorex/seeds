@@ -34,6 +34,7 @@ export default function Header() {
                     )}
 
                     <li>
+                        <Link to="/shop">Shop</Link>
                         <Link to="/cart">
                             Cart
                             {cart.totalCount > 0 && <span className={classes.cart_count}>{cart.totalCount}</span>}
