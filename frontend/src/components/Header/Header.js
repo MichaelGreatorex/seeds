@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import classes from './header.module.css'
+import classes from './header.module.css';
 
 export default function Header() {
     const user = {
@@ -16,12 +16,11 @@ export default function Header() {
     return <header className={classes.header}>
         <div className={classes.container}>
             <Link to="/" className={classes.logo}>
-                Seeds of Destiny
+                Seeds & Cuttings
             </Link>
             <nav>
                 <ul>
-                    {
-                        user?
+                    {user ? (
                         <li className={classes.menu_container}>
                             <Link to="/profile">{user.name}</Link>
                             <div className={classes.menu}>
@@ -29,9 +28,17 @@ export default function Header() {
                                 <Link to="/orders">Orders</Link>
                                 <a onClick={logout}>Logout</a>
                             </div>
-                        </li> :
+                        </li>
+                    ) : (
                         <Link to="/login">Login</Link>
-                    }
+                    )}
+
+                    <li>
+                        <Link to="/cart">
+                            Cart
+                            {cart.totalCount > 0 && <span className={classes.cart_count}>{cart.totalCount}</span>}
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </div>
