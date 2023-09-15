@@ -48,7 +48,7 @@
 }
 
 .menu_container:hover .menu {
-    display:block;
+    display: block;
 }
 
 .menu a {
@@ -60,9 +60,9 @@
     background-color: green;
     color: white;
     margin: 0.25rem;
-    padding: 0 0.25rem 0.2rem 0.25rem;
+    padding: 0 0.2rem 0.2rem 0.2rem;
     border-radius: 100rem;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
 }
 
 

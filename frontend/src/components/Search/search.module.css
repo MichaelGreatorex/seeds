@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap');
+
 .container{
     display: flex;
     justify-content: center;
     margin: 0.8rem;
+
 }
 
 .container input{
     border-radius: 1rem 0 0 1rem;
     border: none;
+    font-family: Ysabeau Sc, sans-serif;
 }
 
 .container button{
@@ -15,6 +19,8 @@
     border: none;
     background-color: rgb(0, 128, 0);
     outline: none;
+    font-family: Ysabeau Sc, sans-serif;
+    padding: 0 0.5rem 0.1rem 0.5rem;
 }
 
 .container button:hover{

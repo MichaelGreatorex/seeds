@@ -31,13 +31,10 @@ export default function Thumbnails({ seeds }) {
                                     <span key={sow}>{sow}</span>
                                 ))}
                             </div>
-                            <div className={classes.germination}>
-                                <span>🗓️</span>
-                                    {seed.germination}
-                            </div>
                             <div className={classes.price}>
                                     <Price price={seed.price} />
                             </div>
+                            <button className={classes.cartbutton}>+🛒</button>
                         </div>
                     </div>
                     </Link>

@@ -8,12 +8,12 @@ export const sample_seeds = [
         inout: 'outdoor',
         germination: '7-10',
         colour: ['yellow'],
-        type: 'flower',
         height: 1.5,
         stars: 4,
-        tags: ['yellow', 'large', 'giant'],
+        tags: ['yellow', 'large', 'giant', 'flowers'],
         imageUrl: 'sunflower.png',
-        favourite: true
+        favourite: true,
+        description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
         id: '2',
@@ -24,12 +24,12 @@ export const sample_seeds = [
         inout: 'outdoor',
         germination: '7-10',
         colour: ['green'],
-        type: ['vegetable'],
         height: 1.8,
         stars: 2,
-        tags: ['legume'],
+        tags: ['legumes', 'vegetables'],
         imageUrl: 'pea.png',
-        favourite: true
+        favourite: true,
+        description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
         id: '3',
@@ -40,12 +40,12 @@ export const sample_seeds = [
         inout: 'outdoor',
         germination: '7-10',
         colour: ['orange','green'],
-        type: ['vegetable'],
         height: 0.2,
         stars: 5,
-        tags: ['root'],
+        tags: ['root','vegetables'],
         imageUrl: 'carrot.png',
-        favourite: false
+        favourite: false,
+        description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
         id: '4',
@@ -56,12 +56,12 @@ export const sample_seeds = [
         inout: 'outdoor',
         germination: '7-10',
         colour: ['red','green'],
-        type: ['fruit'],
         height: 0.2,
         stars: 2.5,
-        tags: ['root'],
+        tags: ['root','fruit'],
         imageUrl: 'strawberry.png',
-        favourite: false
+        favourite: false,
+        description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
         id: '5',
@@ -71,12 +71,19 @@ export const sample_seeds = [
         position: 'direct sun',
         inout: 'outdoor',
         germination: '7-10',
-        colour: ['red','green'],
-        type: ['fruit'],
+        colour: ['green'],
         height: 0.2,
         stars: 3.5,
-        tags: ['root'],
+        tags: ['vegetables'],
         imageUrl: 'broccoli.png',
-        favourite: true
+        favourite: true,
+        description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
+];
+
+export const sample_tags = [
+    { name: 'all', count: '5'},
+    { name: 'fruit', count: '1'},
+    { name: 'vegetables', count: '3'},
+    { name: 'flowers', count: '1'},
 ];
