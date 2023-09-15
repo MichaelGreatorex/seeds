@@ -60,7 +60,7 @@
     background-color: green;
     color: white;
     margin: 0.25rem;
-    padding: 0.1rem 0.25rem;
+    padding: 0 0.25rem 0.2rem 0.25rem;
     border-radius: 100rem;
     font-size: 0.9rem;
 }
