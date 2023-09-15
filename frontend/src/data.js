@@ -3,7 +3,7 @@ export const sample_seeds = [
         id: '1',
         name: 'Sunflower',
         price: 2,
-        sow: ['May', 'June', 'July'],
+        sow: ['May', 'Jun', 'Jul'],
         position: 'direct sun',
         inout: 'outdoor',
         germination: '7-10',
@@ -13,13 +13,13 @@ export const sample_seeds = [
         stars: 4,
         tags: ['yellow', 'large', 'giant'],
         imageUrl: 'sunflower.png',
-        favourite: 'yes'
+        favourite: true
     },
     {
         id: '2',
         name: 'Pea',
         price: 1.5,
-        sow: ['April', 'May'],
+        sow: ['Apr', 'May'],
         position: 'direct sun',
         inout: 'outdoor',
         germination: '7-10',
@@ -29,45 +29,45 @@ export const sample_seeds = [
         stars: 2,
         tags: ['legume'],
         imageUrl: 'pea.png',
-        favourite: 'yes'
+        favourite: true
     },
     {
         id: '3',
         name: 'carrot',
         price: 1,
-        sow: ['February', 'March', 'April'],
+        sow: ['Feb', 'Mar', 'Apr'],
         position: 'direct sun',
         inout: 'outdoor',
         germination: '7-10',
         colour: ['orange','green'],
         type: ['vegetable'],
         height: 0.2,
-        stars: 3.5,
+        stars: 5,
         tags: ['root'],
         imageUrl: 'carrot.png',
-        favourite: 'no'
+        favourite: false
     },
     {
         id: '4',
         name: 'strawberry',
         price: 1,
-        sow: ['March', 'April'],
+        sow: ['Mar', 'Apr'],
         position: 'direct sun',
         inout: 'outdoor',
         germination: '7-10',
         colour: ['red','green'],
         type: ['fruit'],
         height: 0.2,
-        stars: 3.5,
+        stars: 2.5,
         tags: ['root'],
         imageUrl: 'strawberry.png',
-        favourite: 'yes'
+        favourite: false
     },
     {
         id: '5',
         name: 'broccoli',
         price: 1,
-        sow: ['January', 'February', 'March'],
+        sow: ['Jan', 'Feb', 'Mar'],
         position: 'direct sun',
         inout: 'outdoor',
         germination: '7-10',
@@ -77,6 +77,6 @@ export const sample_seeds = [
         stars: 3.5,
         tags: ['root'],
         imageUrl: 'broccoli.png',
-        favourite: 'no'
+        favourite: true
     },
 ];

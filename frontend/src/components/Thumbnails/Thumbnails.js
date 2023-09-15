@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import classes from './thumbnails.module.css';
+import StarRating from "../StarRating/StarRating";
+import Price from "../Price/Price";
 
 export default function Thumbnails({ seeds }) {
     return (
@@ -13,7 +15,6 @@ export default function Thumbnails({ seeds }) {
                             src={`/seeds/${seed.imageUrl}`}
                             alt={seed.name}
                         />
-                    </Link>
                     <div className={classes.content}>
                         <div className={classes.name}>{seed.name}</div>
                         <span 
@@ -21,7 +22,25 @@ export default function Thumbnails({ seeds }) {
                             }`}
                         >❤   
                         </span>
+                        <div className={classes.stars}>
+                            <StarRating stars={seed.stars} />
+                        </div>
+                        <div className={classes.product_item_footer}>
+                            <div className={classes.sow}>
+                                {seed.sow.map(sow => (
+                                    <span key={sow}>{sow}</span>
+                                ))}
+                            </div>
+                            <div className={classes.germination}>
+                                <span>🗓️</span>
+                                    {seed.germination}
+                            </div>
+                            <div className={classes.price}>
+                                    <Price price={seed.price} />
+                            </div>
+                        </div>
                     </div>
+                    </Link>
                 </li>
             ))}
         </ul>
