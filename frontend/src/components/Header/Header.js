@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import classes from './header.module.css';
+import Search from "../Search/Search";
 
 export default function Header() {
     const user = {
@@ -20,6 +21,7 @@ export default function Header() {
             </Link>
             <nav>
                 <ul>
+                <Search />
                     {user ? (
                         <li className={classes.menu_container}>
                             <Link to="/profile">{user.name}</Link>

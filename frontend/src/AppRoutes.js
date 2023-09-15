@@ -6,8 +6,9 @@ import HomePage from "./pages/Home/HomePage";
 export default function AppRoutes() {
     return (
         <Routes>
-            <Route path="/shop" element={<ShopPage />} />
-            <Route path="/"  element={<HomePage />} />      
+            <Route path="/"  element={<HomePage />} />
+            <Route path="/search/:searchTerm" element={<ShopPage />} />
+            <Route path="/shop" element={<ShopPage />} />      
         </Routes>
             
     );

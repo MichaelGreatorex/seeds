@@ -1,6 +1,6 @@
-import React, { useReducer } from "react";
-import { getAll } from '../../services/seedService';
-import { useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
+import { getAll, search } from '../../services/seedService';
+import { useParams } from "react-router-dom";
 import Thumbnails from "../../components/Thumbnails/Thumbnails";
 
 const initialState = { seeds: [] };
@@ -17,10 +17,12 @@ const reducer = (state, action) => {
 export default function ShopPage() {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { seeds } = state;
+    const { searchTerm } = useParams();
 
     useEffect(() => {
-        getAll().then(seeds => dispatch({ type: 'SEEDS_LOADED', payload: seeds }));
-}, []);
+        const loadSeeds = searchTerm ? search(searchTerm) : getAll();
+        loadSeeds.then(seeds => dispatch({ type: 'SEEDS_LOADED', payload: seeds }));
+}, [searchTerm]);
 
     return (
         <>
