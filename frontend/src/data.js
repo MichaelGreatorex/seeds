@@ -33,6 +33,22 @@ export const sample_seeds = [
     },
     {
         id: '3',
+        name: 'broccoli',
+        price: 1,
+        sow: ['Jan', 'Feb', 'Mar'],
+        position: 'direct sun',
+        inout: 'outdoor',
+        germination: '7-10',
+        colour: ['green'],
+        height: 0.2,
+        stars: 3.5,
+        tags: ['vegetables'],
+        imageUrl: 'broccoli.png',
+        favourite: true,
+        description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
+    },
+    {
+        id: '4',
         name: 'carrot',
         price: 1,
         sow: ['Feb', 'Mar', 'Apr'],
@@ -48,7 +64,7 @@ export const sample_seeds = [
         description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
-        id: '4',
+        id: '5',
         name: 'strawberry',
         price: 1,
         sow: ['Mar', 'Apr'],
@@ -63,22 +79,7 @@ export const sample_seeds = [
         favourite: false,
         description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
-    {
-        id: '5',
-        name: 'broccoli',
-        price: 1,
-        sow: ['Jan', 'Feb', 'Mar'],
-        position: 'direct sun',
-        inout: 'outdoor',
-        germination: '7-10',
-        colour: ['green'],
-        height: 0.2,
-        stars: 3.5,
-        tags: ['vegetables'],
-        imageUrl: 'broccoli.png',
-        favourite: true,
-        description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
-    },
+
 ];
 
 export const sample_tags = [
