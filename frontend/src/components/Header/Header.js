@@ -49,7 +49,7 @@ export default function Header() {
         <div className={classes.container}>
         
             <Link to="/" className={classes.logo}>
-                Seeds & Cuttings
+            🌿 Seeds & Cuttings
             </Link>
 
             <nav>

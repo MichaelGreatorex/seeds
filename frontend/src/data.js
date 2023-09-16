@@ -1,7 +1,7 @@
 export const sample_seeds = [
     {
         id: '1',
-        name: 'Sunflower',
+        name: 'sunflower',
         price: 2,
         sow: ['May', 'Jun', 'Jul'],
         position: 'direct sun',
@@ -19,7 +19,7 @@ export const sample_seeds = [
     },
     {
         id: '2',
-        name: 'Pea',
+        name: 'pea',
         price: 1.5,
         sow: ['Apr', 'May'],
         position: 'direct sun',

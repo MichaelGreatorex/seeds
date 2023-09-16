@@ -1,14 +1,12 @@
 import React from "react";
 import { useCart } from '../../hooks/useCart';
 import classes from './cartPage.module.css';
-import Title from "../../components/Title/Title";
 import { Link } from 'react-router-dom';
 import Price from "../../components/Price/Price";
 
 export default function CartPage() {
     const { cart } = useCart();
     return <>
-        <Title title="Cart Page" margin="1.5rem 0 0 2.5rem" />
         {cart && cart.items.length > 0 &&
             <div className={classes.container}>
                 <ul className={classes.list}>
@@ -17,7 +15,7 @@ export default function CartPage() {
                         <div>
                             <img src={`/seeds/${item.seed.imageUrl}`} alt={item.seed.name}/>
                         </div>
-                        <div>
+                        <div className={classes.text}>
                             <Link to={`/seed/${item.seed.id}`}>{item.seed.name}</Link>
                         </div>
 
@@ -37,20 +35,21 @@ export default function CartPage() {
                                 <option>4</option>
                             </select>
                         </div>
-                        <div>
+                        <div className={classes.price}>
                             <Price price={item.price} />
                         </div>
                         <button className={classes.remove_button}>Remove</button>
                     </li>
                     ))}
                 </ul>
-                <div>
+                <div className={classes.checkout}>
                     <div className={classes.packs_count}>{cart.totalCount}</div>
                     <div className={classes.total_price}>
                         <Price price={cart.totalPrice} />
                     </div>
+                    <Link to="/checkout">Checkout</Link>
                 </div>
-                <Link to="/checkout">Checkout</Link>
+                
             </div>
             
         }
