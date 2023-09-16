@@ -47,9 +47,11 @@ export default function Header() {
 
     return <header className={classes.header}>
         <div className={classes.container}>
+        
             <Link to="/" className={classes.logo}>
                 Seeds & Cuttings
             </Link>
+
             <nav>
                 <ul>
                 <Search />
@@ -74,7 +76,7 @@ export default function Header() {
                     <Link to="/cart">
                             Cart
                             {cart.totalCount > 0 && <span className={classes.cart_count}>{cart.totalCount}</span>}
-                        </Link>
+                    </Link>
                 </ul>
             </nav>
         </div>

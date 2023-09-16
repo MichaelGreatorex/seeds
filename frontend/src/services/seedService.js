@@ -15,3 +15,6 @@ export const getAllByTag = async tag => {
     if (tag === 'all') return getAll();
     return sample_seeds.filter(item => item.tags?.includes(tag));
 };
+
+export const getById = async seedId =>
+sample_seeds.find(item => item.id === seedId);

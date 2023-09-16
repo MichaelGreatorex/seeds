@@ -27,7 +27,7 @@ export default function Thumbnails({ seeds }) {
                         </div>
                         <div className={classes.product_item_footer}>
                             <div className={classes.sow}>
-                                {seed.sow.map(sow => (
+                                Sow: {seed.sow.map(sow => (
                                     <span key={sow}>{sow}</span>
                                 ))}
                             </div>

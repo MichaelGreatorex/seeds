@@ -12,6 +12,8 @@ body {
   margin: 0;
   font-family: Ysabeau Sc, sans-serif;
   background-image: url('./components/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {

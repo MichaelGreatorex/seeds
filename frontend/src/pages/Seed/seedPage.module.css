@@ -1,0 +1,131 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image{
+    flex: 1 0;
+    object-fit: contain;
+    height: 22rem;
+    margin: 0 1rem 1rem 1rem;
+    background-color: rgba(255, 255, 255, 0.626);
+}
+
+.details{
+    flex: 1 0;
+    object-fit: contain;
+    height: 22rem;
+    margin: 0 1rem 1rem 1rem;
+    padding: 3%;
+    background-color: rgba(255, 255, 255, 0.626);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.favourite{
+    color: red;
+    font-size: 2rem;
+}
+
+.favourite.not {
+    color: rgba(128, 128, 128, 0.613);
+}
+
+.favourite:hover{
+    cursor: pointer;
+}
+
+.sow{
+    display: flex;
+    margin: 0.5rem 0;
+    font-size: 100%;
+    align-items: center;
+}
+
+.sow > span{
+    padding: 1%;
+    font-size: 100%;
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    background-color: white;
+}
+
+.germination {
+    margin: 0.5rem 0;
+}
+
+.germination span{
+    padding: 0.6rem 2rem 0.6rem 0;
+    font-size: 100%;
+}
+
+.flowers{
+    display: flex;
+    margin: 0.5rem 0;
+    font-size: 100%;
+    align-items: center;
+}
+
+.flowers > span{
+    padding: 1%;
+    font-size: 100%;
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    background-color: white;
+}
+
+.harvest{
+    display: flex;
+    margin: 0.5rem 0;
+    font-size: 100%;
+    align-items: center;
+}
+
+.harvest > span{
+    padding: 1%;
+    font-size: 100%;
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    background-color: white;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.626);
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem 1rem 1rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.626);
+}
+
+.price button {
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 0.5rem;
+    border-radius: .5rem;
+}
+
+.price button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
