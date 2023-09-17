@@ -4,10 +4,13 @@ import { getById } from "../../services/seedService";
 import classes from './seedPage.module.css';
 import StarRating from "../../components/StarRating/StarRating";
 import Price from "../../components/Price/Price";
+import { useCart } from '../../hooks/useCart';
 
 export default function SeedPage() {
 
     const [seed, setSeed] = useState({});
+
+    const { cart } = useCart();
 
     const {id} = useParams();
 
@@ -18,9 +21,26 @@ export default function SeedPage() {
     return (
         <>
             <div className={classes.price}>
-                <span>Pack size</span>
-                <span><Price price={seed.price} /></span>
-                <span><button>Add to Cart</button></span>
+                            <div>
+                                <select>
+                                    <option>10 pack</option>
+                                    <option>50 pack</option>
+                                    <option>100 pack</option>
+                                    <option>200 pack</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                            <div className={classes.tot}>
+                                £40
+                            </div>
+                <button>Add to Cart</button>
             </div>
             
             {seed && (               
@@ -63,9 +83,7 @@ export default function SeedPage() {
 
             <div className={classes.info}>
                 <div className={classes.description}>{seed.description}</div>
-            </div>
-
-            
+            </div>            
         </>
     );
 }

@@ -2,7 +2,7 @@ export const sample_seeds = [
     {
         id: '1',
         name: 'sunflower',
-        price: 2,
+        price: [2],
         sow: ['May', 'Jun', 'Jul'],
         position: 'direct sun',
         inout: 'outdoor',
@@ -20,7 +20,7 @@ export const sample_seeds = [
     {
         id: '2',
         name: 'pea',
-        price: 1.5,
+        price: [1.5],
         sow: ['Apr', 'May'],
         position: 'direct sun',
         inout: 'outdoor',
@@ -38,7 +38,7 @@ export const sample_seeds = [
     {
         id: '3',
         name: 'strawberry',
-        price: 1,
+        price: [1],
         sow: ['Mar', 'Apr'],
         position: 'direct sun',
         inout: 'outdoor',
@@ -56,7 +56,7 @@ export const sample_seeds = [
     {
         id: '4',
         name: 'broccoli',
-        price: 1,
+        price: [1],
         sow: ['Jan', 'Feb', 'Mar'],
         position: 'direct sun',
         inout: 'outdoor',
@@ -74,7 +74,7 @@ export const sample_seeds = [
     {
         id: '5',
         name: 'carrot',
-        price: 1,
+        price: [1.2],
         sow: ['Feb', 'Mar', 'Apr'],
         position: 'direct sun',
         inout: 'outdoor',
