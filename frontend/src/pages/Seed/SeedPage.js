@@ -22,19 +22,11 @@ export default function SeedPage() {
             <div className={classes.price}>
 
                             <div>Pack Size:
-                                <select className={classes.dropdown}>
+                                <select className={classes.dropdown} >
                                     <option value={1}>10 pack</option>
                                     <option value={1.5}>50 pack</option>
                                     <option value={1.8}>100 pack</option>
                                     <option value={2}>200 pack</option>
-                                </select>
-                            </div>
-                            <div>Quantity:
-                                <select className={classes.dropdown}>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
                                 </select>
                             </div>
                             <div className={classes.tot}>{` £${seed.price}`}

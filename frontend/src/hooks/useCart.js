@@ -18,24 +18,17 @@ export default function CartProvider({children}) {
         setCartItems(filteredCartItems);
     };
 
-    const editCart = (cartItem, newQuantity, selectedPack, selectedSize) => {
+    const editCart = (cartItem, selectedPack) => {
         const { seed } = cartItem;
-        
-        
+                
         const choosePackSize = {
             ...cartItem,
             packsize: selectedPack,
             price: seed.price * selectedPack,
         };
 
-        const changeQuantity = {
-            ...cartItem,
-            quantity: newQuantity,
-            price: seed.price * newQuantity,
-        };
-
         setCartItems(
-            cartItems.map(item => (item.seed.id === seed.id ? changeQuantity || choosePackSize : item))
+            cartItems.map(item => (item.seed.id === seed.id ? choosePackSize : item))
         );
     };
 
