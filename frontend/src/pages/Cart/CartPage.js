@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Price from "../../components/Price/Price";
 
 export default function CartPage() {
-    const { cart } = useCart();
+    const { cart, removeFromCart } = useCart();
     return <>
         {cart && cart.items.length > 0 &&
             <div className={classes.container}>
@@ -38,7 +38,9 @@ export default function CartPage() {
                         <div className={classes.price}>
                             <Price price={item.price} />
                         </div>
-                        <button className={classes.remove_button}>Remove</button>
+                        <button className={classes.remove_button}
+                        onClick={() => removeFromCart(item.seed.id)}
+                        >Remove</button>
                     </li>
                     ))}
                 </ul>

@@ -5,7 +5,7 @@ const CartContext = createContext(null)
 
 export default function CartProvider({children}) {
     
-    const [cartItems, setCartItems] = useState(
+    const [cartItems, setCartItems ] = useState(
         sample_seeds
         .slice(1, 4)
         .map(seed => ({ seed, quantity: 1, price: seed.price }))
@@ -13,8 +13,16 @@ export default function CartProvider({children}) {
     const [totalPrice, setTotalPrice] = useState(40);
     const [totalCount, setTotalCount] = useState(3);
     
+    const removeFromCart = seedId => {
+        const filteredCartItems = cartItems.filter(item => item.seed.id !== seedId);
+        setCartItems(filteredCartItems);
+    };
+
     return (
-        <CartContext.Provider value={{cart:{ items: cartItems, totalPrice, totalCount } }}>
+        <CartContext.Provider 
+            value={{cart:{ items: cartItems, totalPrice, totalCount }, 
+            removeFromCart,
+        }}>
             {children}
         </CartContext.Provider>
     );
