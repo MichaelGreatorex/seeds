@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Price from "../../components/Price/Price";
 
 export default function CartPage() {
-    const { cart, removeFromCart, choosePackSize } = useCart();
+    const { cart, removeFromCart, editCart, editCart2 } = useCart();
     return <>
         {cart && cart.items.length > 0 &&
             <div className={classes.container}>
@@ -20,7 +20,7 @@ export default function CartPage() {
                         </div>
 
                         <div>
-                            <select value={item.packsize} onChange={e => choosePackSize(item, e.target.value)}>
+                            <select value={item.packsize} onChange={e => editCart(item, e.target.value)}>
                                 <option value={1}>10 pack</option>
                                 <option value={1.5}>50 pack</option>
                                 <option value={1.8}>100 pack</option>
@@ -28,11 +28,11 @@ export default function CartPage() {
                             </select>
                         </div>
                         <div>
-                            <select value={item.quantity}>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                            <select value={item.quantity} onChange={e => editCart2(item, e.target.value)}>
+                                <option value={1}>1</option>
+                                <option value={2}>2</option>
+                                <option value={3}>3</option>
+                                <option value={4}>4</option>
                             </select>
                         </div>
                         <div className={classes.price}>
