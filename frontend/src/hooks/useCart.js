@@ -18,9 +18,9 @@ export default function CartProvider({children}) {
         setCartItems(filteredCartItems);
     };
 
-    const editCart = (cartItem, selectedPack, newQuantity) => {
+    const editCart = (cartItem, newQuantity, selectedPack) => {
         const { seed } = cartItem;
-
+        
         const choosePackSize = {
             ...cartItem,
             packsize: selectedPack,
@@ -28,39 +28,23 @@ export default function CartProvider({children}) {
             price: seed.price * selectedPack,
         };
 
-        setCartItems(
-            cartItems.map(item => (item.seed.id === seed.id ? choosePackSize : item))
-        );
-    };
-
-    const editCart2 = (cartItem, newQuantity, selectedPack) => {
-        const { seed } = cartItem;
-
         const changeQuantity = {
             ...cartItem,
             packsize: selectedPack,
             quantity: newQuantity,
-            price: seed.price * newQuantity,
+            price:  seed.price * newQuantity,
         };
 
         setCartItems(
-            cartItems.map(item => (item.seed.id === seed.id ? changeQuantity : item))
+            cartItems.map(item => (item.seed.id === seed.id ? changeQuantity || choosePackSize : item))
         );
     };
-
-    
-
-
-
-
-
 
     return (
         <CartContext.Provider 
             value={{cart:{ items: cartItems, totalPrice, totalCount }, 
             removeFromCart,
             editCart,
-            editCart2,
         }}>
             {children}
         </CartContext.Provider>

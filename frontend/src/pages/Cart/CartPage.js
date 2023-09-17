@@ -18,22 +18,23 @@ export default function CartPage() {
                         <div className={classes.text}>
                             <Link to={`/seed/${item.seed.id}`}>{item.seed.name}</Link>
                         </div>
-
-                        <div>
-                            <select value={item.packsize} onChange={e => editCart(item, e.target.value)}>
-                                <option value={1}>10 pack</option>
-                                <option value={1.5}>50 pack</option>
-                                <option value={1.8}>100 pack</option>
-                                <option value={2}>200 pack</option>
-                            </select>
-                        </div>
-                        <div>
-                            <select value={item.quantity} onChange={e => editCart2(item, e.target.value)}>
-                                <option value={1}>1</option>
-                                <option value={2}>2</option>
-                                <option value={3}>3</option>
-                                <option value={4}>4</option>
-                            </select>
+                        <div className={classes.dropdown} onChange={e => editCart(item, e.target.value)}>
+                            <div>
+                                <select value={item.packsize}>
+                                    <option value={1}>10 pack</option>
+                                    <option value={1.5}>50 pack</option>
+                                    <option value={1.8}>100 pack</option>
+                                    <option value={2}>200 pack</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select value={item.quantity}>
+                                    <option value={1}>1</option>
+                                    <option value={2}>2</option>
+                                    <option value={3}>3</option>
+                                    <option value={4}>4</option>
+                                </select>
+                            </div>
                         </div>
                         <div className={classes.price}>
                             <Price price={item.price} />
