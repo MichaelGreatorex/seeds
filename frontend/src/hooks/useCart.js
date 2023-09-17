@@ -18,21 +18,20 @@ export default function CartProvider({children}) {
         setCartItems(filteredCartItems);
     };
 
-    const editCart = (cartItem, newQuantity, selectedPack) => {
+    const editCart = (cartItem, newQuantity, selectedPack, selectedSize) => {
         const { seed } = cartItem;
+        
         
         const choosePackSize = {
             ...cartItem,
             packsize: selectedPack,
-            quantity: newQuantity,
             price: seed.price * selectedPack,
         };
 
         const changeQuantity = {
             ...cartItem,
-            packsize: selectedPack,
             quantity: newQuantity,
-            price:  seed.price * newQuantity,
+            price: seed.price * newQuantity,
         };
 
         setCartItems(

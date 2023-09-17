@@ -38,7 +38,7 @@ export const sample_seeds = [
     {
         id: '3',
         name: 'strawberry',
-        price: [1],
+        price: [1.2],
         sow: ['Mar', 'Apr'],
         position: 'direct sun',
         inout: 'outdoor',
@@ -56,7 +56,7 @@ export const sample_seeds = [
     {
         id: '4',
         name: 'broccoli',
-        price: [1],
+        price: [1.8],
         sow: ['Jan', 'Feb', 'Mar'],
         position: 'direct sun',
         inout: 'outdoor',

@@ -22,9 +22,9 @@ export default function CartPage() {
                             <div>
                                 <select value={item.packsize}>
                                     <option value={1}>10 pack</option>
-                                    <option value={1.5}>50 pack</option>
-                                    <option value={1.8}>100 pack</option>
-                                    <option value={2}>200 pack</option>
+                                    <option value={4}>50 pack</option>
+                                    <option value={6}>100 pack</option>
+                                    <option value={7}>200 pack</option>
                                 </select>
                             </div>
                             <div>
