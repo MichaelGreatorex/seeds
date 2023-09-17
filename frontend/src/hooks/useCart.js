@@ -18,10 +18,30 @@ export default function CartProvider({children}) {
         setCartItems(filteredCartItems);
     };
 
+    const choosePackSize = (cartItem, selectedPack) => {
+        const { seed } = cartItem;
+
+        const packSizeSelected = {
+            ...cartItem,
+            packsize: selectedPack,
+            price: seed.price * selectedPack,
+        };
+
+        setCartItems(
+            cartItems.map(item => (item.seed.id === seed.id ? packSizeSelected : item))
+        );
+    };
+
+
+
+
+
+
     return (
         <CartContext.Provider 
             value={{cart:{ items: cartItems, totalPrice, totalCount }, 
             removeFromCart,
+            choosePackSize,
         }}>
             {children}
         </CartContext.Provider>

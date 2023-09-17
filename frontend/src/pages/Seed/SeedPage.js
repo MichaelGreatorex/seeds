@@ -7,10 +7,9 @@ import Price from "../../components/Price/Price";
 import { useCart } from '../../hooks/useCart';
 
 export default function SeedPage() {
-
+    const { cart, removeFromCart, choosePackSize } = useCart();
+    
     const [seed, setSeed] = useState({});
-
-    const { cart } = useCart();
 
     const {id} = useParams();
 
@@ -21,12 +20,13 @@ export default function SeedPage() {
     return (
         <>
             <div className={classes.price}>
+
                             <div>Pack Size:
                                 <select className={classes.dropdown}>
-                                    <option>10 pack</option>
-                                    <option>50 pack</option>
-                                    <option>100 pack</option>
-                                    <option>200 pack</option>
+                                    <option value={1}>10 pack</option>
+                                    <option value={1.5}>50 pack</option>
+                                    <option value={1.8}>100 pack</option>
+                                    <option value={2}>200 pack</option>
                                 </select>
                             </div>
                             <div>Quantity:
