@@ -62,7 +62,13 @@ export default function CartProvider({children}) {
     const addToCart = seed => {
         const cartItem = cartItems.find(item => item.seed.id === seed.id);
         if(cartItem){
-            changeQuantity(cartItem, cartItem.quantity + 1);
+            if (cartItem.quantity < 5){
+                changeQuantity(cartItem, cartItem.quantity + 1);
+            } else {
+                alert("Sorry! Max 5 Packs of each seed per customer");
+            }
+
+            
         } else {
             setCartItems([...cartItems, { seed, quantity: 1, price: seed.price }]);
         }
