@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Price from "../../components/Price/Price";
 
 export default function CartPage() {
-    const { cart, removeFromCart, editCart, } = useCart();
+    const { cart, removeFromCart, changeQuantity } = useCart();
     return <>
         {cart && cart.items.length > 0 &&
             <div className={classes.container}>
@@ -18,13 +18,13 @@ export default function CartPage() {
                         <div className={classes.text}>
                             <Link to={`/seed/${item.seed.id}`}>{item.seed.name}</Link>
                         </div>
-                        <div className={classes.dropdown} onChange={e => editCart(item, e.target.value)}>
+                        <div className={classes.dropdown}>
                             <div>
-                                <select value={item.packsize}>
-                                    <option value={1}>10 pack</option>
-                                    <option value={1.5}>50 pack</option>
-                                    <option value={1.8}>100 pack</option>
-                                    <option value={2.1}>200 pack</option>
+                                <select value={item.quantity} onChange={e => changeQuantity(item, Number(e.target.value))}>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
                                 </select>
                             </div>
                         </div>
