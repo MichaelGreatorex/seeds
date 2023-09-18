@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import classes from './thumbnails.module.css';
 import StarRating from "../StarRating/StarRating";
 import Price from "../Price/Price";
+import { useCart } from '../../hooks/useCart';
 
 export default function Thumbnails({ seeds }) {
+    const { addToCart } = useCart();
+    const [seed, setSeed] = useState({});
+
+    const handleAddToCart = () => {
+        addToCart(seed);
+    }
+
     return (
         <ul className={classes.list}>
             {seeds.map(seed => (
@@ -34,7 +42,6 @@ export default function Thumbnails({ seeds }) {
                             <div className={classes.price}>
                                     <Price price={seed.price} />
                             </div>
-                            <button className={classes.cartbutton}>+🛒</button>
                         </div>
                     </div>
                     </Link>

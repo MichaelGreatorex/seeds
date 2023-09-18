@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Thumbnails from "../../components/Thumbnails/Thumbnails";
 import Tags from "../../components/Tags/Tags";
 import NotFound from "../../components/NotFound/NotFound";
+import { useCart } from '../../hooks/useCart';
 
 const initialState = { seeds: [], tags: [] };
 
@@ -22,6 +23,7 @@ export default function ShopPage() {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { seeds, tags } = state;
     const { searchTerm, tag } = useParams();
+    const { addToCart } = useCart();
 
     useEffect(() => {
         getAllTags().then(tags => dispatch({ type: 'TAGS_LOADED', payload: tags }));
