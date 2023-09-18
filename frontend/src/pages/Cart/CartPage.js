@@ -6,7 +6,7 @@ import Price from "../../components/Price/Price";
 
 export default function CartPage() {
     const { cart, removeFromCart, changeQuantity } = useCart();
-    return <>
+    return <> 
         {cart && cart.items.length > 0 &&
             <div className={classes.container}>
                 <ul className={classes.list}>
@@ -48,5 +48,6 @@ export default function CartPage() {
             </div>
             
         }
-    </>;
+    </>
+    ;
 }

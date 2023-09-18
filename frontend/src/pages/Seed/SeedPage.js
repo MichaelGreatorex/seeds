@@ -7,11 +7,14 @@ import Price from "../../components/Price/Price";
 import { useCart } from '../../hooks/useCart';
 
 export default function SeedPage() {
-    const { cart, removeFromCart, choosePackSize } = useCart();
-    
+    const { cart } = useCart();    
     const [seed, setSeed] = useState({});
-
     const {id} = useParams();
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        addToCart(seed);
+    }
 
     useEffect(() => {
         getById(id).then(setSeed);
@@ -20,19 +23,10 @@ export default function SeedPage() {
     return (
         <>
             <div className={classes.price}>
-
-                            <div>Pack Size:
-                                <select className={classes.dropdown} >
-                                    <option value={1}>10 pack</option>
-                                    <option value={1.5}>50 pack</option>
-                                    <option value={1.8}>100 pack</option>
-                                    <option value={2}>200 pack</option>
-                                </select>
-                            </div>
-                            <div className={classes.tot}>{` £${seed.price}`}
+                            <div className={classes.tot}>{`pack of 10: £${seed.price}`}
 
                             </div>
-                <button>Add to Cart</button>
+                <button onClick={handleAddToCart}>Add to Cart</button>
             </div>
             
             {seed && (               
