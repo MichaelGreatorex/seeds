@@ -66,9 +66,7 @@ export default function CartProvider({children}) {
                 changeQuantity(cartItem, cartItem.quantity + 1);
             } else {
                 alert("Sorry! Max 5 Packs of each seed per customer");
-            }
-
-            
+            }            
         } else {
             setCartItems([...cartItems, { seed, quantity: 1, price: seed.price }]);
         }

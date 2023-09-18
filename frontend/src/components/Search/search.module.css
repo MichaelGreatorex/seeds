@@ -24,6 +24,6 @@
 }
 
 .container button:hover{
-    opacity: .6;
+    opacity: .9;
     cursor: pointer;
 }
