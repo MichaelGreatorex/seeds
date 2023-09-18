@@ -1,4 +1,4 @@
-
+import { useCart } from '../../hooks/useCart';
 import { Link } from 'react-router-dom';
 import classes from './header.module.css';
 import Search from "../Search/Search";
@@ -26,9 +26,7 @@ export default function Header() {
         name: 'John',
     };
 
-    const cart = {
-        totalCount: 10,
-    }
+    const {cart} = useCart();
 
     const logout = () => {}
 
