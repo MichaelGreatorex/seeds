@@ -1,20 +1,27 @@
-import { sample_seeds, sample_tags } from "../data";
+import axios from 'axios';
 
-export const getAll = async () => sample_seeds;
+export const getAll = async () => {
+    const { data } = await axios.get('/api/seeds');
+    return data;
+};
 
-export const search = async searchTerm =>
-    sample_seeds.filter(item =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
-        + item.tags.includes(searchTerm.toLowerCase())
-        + item.colour.includes(searchTerm.toLowerCase())
-    );
+export const search = async searchTerm => {
+    const { data } = await axios.get('/api/seeds/search/' + searchTerm);
+    return data;
+}
 
-export const getAllTags = async () => sample_tags;
+export const getAllTags = async () => {
+    const { data } = await axios.get('/api/seeds/tags');
+    return data;
+};
 
 export const getAllByTag = async tag => {
     if (tag === 'all') return getAll();
-    return sample_seeds.filter(item => item.tags?.includes(tag));
+    const { data } = await axios.get('/api/seeds/tag/' + tag);
+    return data;
 };
 
-export const getById = async seedId =>
-sample_seeds.find(item => item.id === seedId);
+export const getById = async seedId => {
+    const { data } = await axios.get('/api/seeds/' + seedId);
+    return data;
+};

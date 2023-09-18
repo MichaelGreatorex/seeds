@@ -3,11 +3,12 @@ import { useCart } from '../../hooks/useCart';
 import classes from './cartPage.module.css';
 import { Link } from 'react-router-dom';
 import Price from "../../components/Price/Price";
+import NotFound from "../../components/NotFound/NotFound";
 
 export default function CartPage() {
     const { cart, removeFromCart, changeQuantity } = useCart();
     return <> 
-        {cart && cart.items.length > 0 &&
+        { cart.items.length === 0 ? (<NotFound message="No items in Cart"/>) : (
             <div className={classes.container}>
                 <ul className={classes.list}>
                     {cart.items.map(item => (
@@ -48,7 +49,7 @@ export default function CartPage() {
                 
             </div>
             
-        }
+        )}
     </>
     ;
 }

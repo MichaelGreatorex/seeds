@@ -5,6 +5,7 @@ import classes from './seedPage.module.css';
 import StarRating from "../../components/StarRating/StarRating";
 import Price from "../../components/Price/Price";
 import { useCart } from '../../hooks/useCart';
+import NotFound from '../../components/NotFound/NotFound';
 
 export default function SeedPage() {
     const { cart } = useCart();    
@@ -21,16 +22,13 @@ export default function SeedPage() {
     }, [id]);
 
     return (
-        <>
-            <div className={classes.price}>
-                            <div className={classes.tot}>{`pack of 10: £${seed.price}`}
-
-                            </div>
-                <button onClick={handleAddToCart}>Add to Cart</button>
-            </div>
-            
-            {seed && (               
+        <>            
+            {!seed ? (<NotFound message="Sorry, it looks like that product is no longer available" linkText="Return to Shop"/>) : (               
                 <div className={classes.container}>
+                    <div className={classes.price}>
+                        <div className={classes.tot}>{`pack of 10: £${seed.price}`}</div>
+                        <button onClick={handleAddToCart}>Add to Cart</button>
+                    </div>
                     <img
                         className={classes.image}
                         src={`/seeds/${seed.imageUrl}`}
@@ -64,12 +62,15 @@ export default function SeedPage() {
                             ))}
                         </div>
                     </div>
+
+                    <div className={classes.info}>
+                <div className={classes.description}>{seed.description}</div>
+            </div>  
                 </div>
+                
             )}
 
-            <div className={classes.info}>
-                <div className={classes.description}>{seed.description}</div>
-            </div>            
+          
         </>
     );
 }
