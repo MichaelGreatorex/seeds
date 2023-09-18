@@ -32,7 +32,7 @@ export default function CartProvider({children}) {
     }, [cartItems]);
 
     function getCartFromLocalStorage() {
-    const storedCart = localStorage.setItem(CART_KEY, EMPTY_CART);
+    const storedCart = localStorage.getItem(CART_KEY);
         return storedCart ? JSON.parse(storedCart) : EMPTY_CART;
     }
 
