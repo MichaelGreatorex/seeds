@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 
 const CartContext = createContext(null);
 const CART_KEY = 'cart';
@@ -63,11 +64,13 @@ export default function CartProvider({children}) {
         if(cartItem){
             if (cartItem.quantity < 5){
                 changeQuantity(cartItem, cartItem.quantity + 1);
+                toast.success('Added to Cart');
             } else {
-                alert("Sorry! Max 5 Packs of each seed per customer");
+                toast.error('Sorry! Max 5 of each seed per customer')
             }            
         } else {
             setCartItems([...cartItems, { seed, quantity: 1, price: seed.price }]);
+            toast.success('Added to Cart');
         }
     };
 

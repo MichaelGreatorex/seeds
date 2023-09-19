@@ -97,3 +97,22 @@ export const sample_tags = [
     { name: 'vegetables', count: '3'},
     { name: 'flowers', count: '1'},
 ];
+
+export const sample_users = [
+    {
+        id: 1,
+        name: 'John Doe',
+        email: 'john@gmail.com',
+        password: '12345',
+        address: 'London',
+        isAdmin: false,
+    },
+    {
+        id: 2,
+        name: 'Nick Smith',
+        email: 'nick@gmail.com',
+        password: '54321',
+        address: 'Miami',
+        isAdmin: true,
+    },
+];

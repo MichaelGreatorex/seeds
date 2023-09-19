@@ -1,0 +1,23 @@
+.container {
+    position: relative;
+    margin-bottom: 0.5rem;
+    border-radius: 0.7rem;
+    padding: 0.3rem 0;
+    border: 1px solid green;
+    background-color: whitesmoke;
+}
+
+.label {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: black;
+    font-size: 1.1rem;
+}
+
+.content {
+    padding: 0 0.5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+

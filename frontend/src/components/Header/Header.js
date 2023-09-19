@@ -7,6 +7,7 @@ import Tags from "../../components/Tags/Tags";
 import React, { useReducer, useEffect } from "react";
 import { getAll, getAllTags, getAllByTag, search } from '../../services/seedService';
 import { useParams } from "react-router-dom";
+import { useAuth } from '../../hooks/useAuth';
 
 const initialState = { seeds: [], tags: [] };
 
@@ -22,13 +23,9 @@ const reducer = (state, action) => {
 };
 
 export default function Header() {
-    const user = {
-        name: 'John',
-    };
+    const { user, logout } = useAuth();
 
     const {cart} = useCart();
-
-    const logout = () => {}
 
     const [state, dispatch] = useReducer(reducer, initialState);
     const { tags } = state;

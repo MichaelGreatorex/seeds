@@ -7,6 +7,7 @@ import Price from "../../components/Price/Price";
 import { useCart } from '../../hooks/useCart';
 import NotFound from '../../components/NotFound/NotFound';
 
+
 export default function SeedPage() {
     const { cart } = useCart();    
     const [seed, setSeed] = useState({});
@@ -15,6 +16,7 @@ export default function SeedPage() {
 
     const handleAddToCart = () => {
         addToCart(seed);
+
     }
 
     useEffect(() => {
@@ -68,9 +70,7 @@ export default function SeedPage() {
             </div>  
                 </div>
                 
-            )}
-
-          
+            )}          
         </>
     );
 }
