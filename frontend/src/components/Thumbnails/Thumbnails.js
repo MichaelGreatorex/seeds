@@ -20,7 +20,7 @@ export default function Thumbnails({ seeds }) {
                     <Link to={`/seed/${seed.id}`}>
                         <img
                             className={classes.image}
-                            src={`/seeds/${seed.imageUrl}`}
+                            src={`${seed.imageUrl}`}
                             alt={seed.name}
                         />
                     <div className={classes.content}>

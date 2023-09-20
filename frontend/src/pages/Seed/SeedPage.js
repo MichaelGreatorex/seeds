@@ -33,7 +33,7 @@ export default function SeedPage() {
                     </div>
                     <img
                         className={classes.image}
-                        src={`/seeds/${seed.imageUrl}`}
+                        src={`${seed.imageUrl}`}
                         alt={seed.name}
                     />
 

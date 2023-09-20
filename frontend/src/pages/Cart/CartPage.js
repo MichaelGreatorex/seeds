@@ -14,10 +14,10 @@ export default function CartPage() {
                     {cart.items.map(item => (
                     <li key={item.seed.id}>
                         <div>
-                            <img src={`/seeds/${item.seed.imageUrl}`} alt={item.seed.name}/>
+                            <img src={`${item.seed.imageUrl}`} alt={item.seed.name}/>
                         </div>
                         <div className={classes.text}>
-                            <Link to={`/seed/${item.seed.id}`}>{item.seed.name}</Link>
+                            <Link to={`${item.seed.id}`}>{item.seed.name}</Link>
                         </div>
                         <div className={classes.dropdown}>
                             <div>
