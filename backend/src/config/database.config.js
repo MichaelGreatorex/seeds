@@ -47,7 +47,6 @@ async function initUsers() {
   
     for (const seed of sample_seeds) {
       seed.imageUrl = `/seeds/${seed.imageUrl}`;
-      seed.id = `/seeds/${seed.id}`; // cut this before connecting to Mongo DB, then paste it back after successful upload
       await SeedModel.create(seed);
     }
   
