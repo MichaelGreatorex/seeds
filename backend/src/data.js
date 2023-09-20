@@ -1,6 +1,31 @@
+
+
+export const sample_tags = [
+    { name: 'all', count: '5'},
+    { name: 'fruit', count: '1'},
+    { name: 'vegetables', count: '3'},
+    { name: 'flowers', count: '1'},
+];
+
+export const sample_users = [
+    {
+        name: 'John Doe',
+        email: 'john@gmail.com',
+        password: '12345',
+        address: 'London',
+        isAdmin: false,
+    },
+    {
+        name: 'Nick Smith',
+        email: 'nick@gmail.com',
+        password: '54321',
+        address: 'Miami',
+        isAdmin: true,
+    },
+];
+
 export const sample_seeds = [
     {
-        id: '1',
         name: 'sunflower',
         price: 2,
         sow: ['May', 'Jun', 'Jul'],
@@ -18,7 +43,6 @@ export const sample_seeds = [
         description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
-        id: '2',
         name: 'pea',
         price: 1.5,
         sow: ['Apr', 'May'],
@@ -36,7 +60,6 @@ export const sample_seeds = [
         description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
-        id: '3',
         name: 'strawberry',
         price: 1.2,
         sow: ['Mar', 'Apr'],
@@ -46,7 +69,7 @@ export const sample_seeds = [
         colour: ['red','green'],
         height: 0.2,
         stars: 2.5,
-        tags: ['root','fruit'],
+        tags: ['fruit'],
         imageUrl: 'strawberry.png',
         favourite: false,
         flowers: ['Jun','Jul', 'Aug'],
@@ -54,7 +77,6 @@ export const sample_seeds = [
         description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
-        id: '4',
         name: 'broccoli',
         price: 1.8,
         sow: ['Jan', 'Feb', 'Mar'],
@@ -72,7 +94,6 @@ export const sample_seeds = [
         description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
     {
-        id: '5',
         name: 'carrot',
         price: 1.2,
         sow: ['Feb', 'Mar', 'Apr'],
@@ -88,31 +109,5 @@ export const sample_seeds = [
         flowers: ['-'],
         harvest: ['Aug','Sep', 'Oct', 'Nov'],
         description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
-    },
-];
-
-export const sample_tags = [
-    { name: 'all', count: '5'},
-    { name: 'fruit', count: '1'},
-    { name: 'vegetables', count: '3'},
-    { name: 'flowers', count: '1'},
-];
-
-export const sample_users = [
-    {
-        id: 1,
-        name: 'John Doe',
-        email: 'john@gmail.com',
-        password: '12345',
-        address: 'London',
-        isAdmin: false,
-    },
-    {
-        id: 2,
-        name: 'Nick Smith',
-        email: 'nick@gmail.com',
-        password: '54321',
-        address: 'Miami',
-        isAdmin: true,
     },
 ];

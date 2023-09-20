@@ -16,9 +16,41 @@ export const dbconnect = async () => {
             useUnifiedTopology: true,
         });
         await initUsers();
+        await initSeeds();
         console.log('connect successfully---');
     }   catch (error) {
         console.log(error);
     }
 };
+
+async function initUsers() {
+    const usersCount = await UserModel.countDocuments();
+    if (usersCount > 0) {
+      console.log('Users init is already done!');
+      return;
+    }
+  
+    for (let user of sample_users) {
+      user.password = await bcrypt.hash(user.password, PASSWORD_HASH_SALT_ROUNDS);
+      await UserModel.create(user);
+    }
+  
+    console.log('Users init is now done!');
+  }
+  
+  async function initSeeds() {
+    const seeds = await SeedModel.countDocuments();
+    if (seeds > 0) {
+      console.log('Seeds init is already done!');
+      return;
+    }
+  
+    for (const seed of sample_seeds) {
+      seed.imageUrl = `/seeds/${seed.imageUrl}`;
+      seed.id = `/seeds/${seed.id}`; // cut this before connecting to Mongo DB, then paste it back after successful upload
+      await SeedModel.create(seed);
+    }
+  
+    console.log('Foods seed Is Done!');
+  }
 

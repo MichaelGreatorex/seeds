@@ -1,36 +1,62 @@
 import { Router } from "express";
-import { sample_seeds, sample_tags } from "../data.js";
-
+import { sample_tags } from "../data.js";
+import { SeedModel } from "../models/seed.model.js"
+import handler from 'express-async-handler';
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.send(sample_seeds);
-});
+router.get('/', handler(async (req, res) => {
+    const seeds = await SeedModel.find({});
+    res.send(seeds);
+}));
 
-router.get('/tags', (req, res) => {
-    res.send(sample_tags);
-});
+router.get('/tags', handler(async (req, res) => {
+    const tags = await SeedModel.aggregate([
+        {
+            $unwind: '$tags',
+        },
+        {
+            $group: {
+                _id: '$tags',
+                count: { $sum: 1 },
+            },
+        },
+        {
+            $project: {
+                _id: 0,
+                name: '$_id',
+                count: '$count',
+            },
+        },
+    ]).sort({count: -1 });
 
-router.get('/search/:searchTerm', (req, res) => {
+    const all = {
+        name: 'all',
+        count: await SeedModel.countDocuments(),
+    };
+
+    tags.unshift(all);
+
+    res.send(tags);
+}));
+
+router.get('/search/:searchTerm', handler(async (req, res) => {
     const { searchTerm } = req.params;
-    const seeds = sample_seeds.filter(item =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
-        + item.tags.includes(searchTerm.toLowerCase())
-        + item.colour.includes(searchTerm.toLowerCase())
-    );
-    res.send(seeds);
-});
+    const searchRegex = new RegExp(searchTerm, 'i');
 
-router.get('/tag/:tag', (req, res) => {
+    const seeds = await SeedModel.find({ name: { $regex: searchRegex }});
+    res.send(seeds);
+}));
+
+router.get('/tag/:tag', handler(async (req, res) => {
     const { tag } = req.params;
-    const seeds = sample_seeds.filter(item => item.tags?.includes(tag));
+    const seeds = await SeedModel.find({ tags: tag });
     res.send(seeds);
-});
+}));
 
-router.get('/:seedId', (req, res) => {
+router.get('/:seedId', handler(async (req, res) => {
     const { seedId } = req.params;
-    const seed = sample_seeds.find(item => item.id === seedId);
+    const seed = await SeedModel.findById(seedId);
     res.send(seed);
-});
+}));
 
 export default router;
