@@ -52,7 +52,7 @@ export default function Header() {
                 <Search />
                     {user ? (
                         <li className={classes.menu_container}>
-                            <Link to="/profile">{user.name}</Link>
+                            <Link to="/profile">{user.firstName}</Link>
                             <div className={classes.menu}>
                                 <Link to="/profile">Profile</Link>
                                 <Link to="/orders">Orders</Link>

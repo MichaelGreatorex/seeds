@@ -1,15 +1,23 @@
-import React from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../../components/Input/Input";
 import Title from "../../components/Title/Title";
 import classes from './registerPage.module.css';
 import Button from "../../components/Button/Button";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function RegisterPage() {
-
+    const auth = useAuth();
+    const { user } = auth;
+    const navigate = useNavigate();
     const [params] = useSearchParams();
     const returnUrl = params.get('returnUrl');
+
+    useEffect(() => {
+        if (!user) return;
+        returnUrl ? navigate(returnUrl) : navigate('/');
+    }, [user]);
     
     const {
         handleSubmit,
@@ -18,7 +26,9 @@ export default function RegisterPage() {
         formState: { errors },
     } = useForm();
 
-    const submit = async data => {};
+    const submit = async data => {
+        await auth.register(data);
+    };
 
     return <div className={classes.container}>
         <div className={classes.details}>
@@ -26,12 +36,22 @@ export default function RegisterPage() {
             <form onSubmit={handleSubmit(submit)} noValidate>
                     <Input
                         type="text"
-                        label="Name"
-                        {...register('Name', {
+                        label="First Name"
+                        {...register('firstName', {
                             required: true,
-                            minLength: 3,
+                            minLength: 2,
                         })}
-                        error={errors.name}
+                        error={errors.firstName}
+                    />
+
+                    <Input
+                        type="text"
+                        label="Last Name"
+                        {...register('lastName', {
+                            required: true,
+                            minLength: 2,
+                        })}
+                        error={errors.lastName}
                     />
 
                     <Input 

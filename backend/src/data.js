@@ -9,14 +9,16 @@ export const sample_tags = [
 
 export const sample_users = [
     {
-        name: 'John Doe',
+        firstName: 'John',
+        lastName: 'Doe',
         email: 'john@gmail.com',
         password: '12345',
         address: 'London',
         isAdmin: false,
     },
     {
-        name: 'Nick Smith',
+        firstName: 'Nick',
+        lastName: 'Smith',
         email: 'nick@gmail.com',
         password: '54321',
         address: 'Miami',
