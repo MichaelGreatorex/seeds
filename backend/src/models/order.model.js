@@ -14,7 +14,7 @@ export const LatLngSchema = new Schema(
 
 export const OrderItemSchema = new Schema(
   {
-    food: { type: SeedModel.schema, required: true },
+    seed: { type: SeedModel.schema, required: true },
     price: { type: Number, required: true },
     quantity: { type: Number, required: true },
   },
