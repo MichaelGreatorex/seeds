@@ -6,6 +6,8 @@ import SeedPage from "./pages/Seed/SeedPage";
 import CartPage from "./pages/Cart/CartPage";
 import LoginPage from "./pages/Login/LoginPage";
 import RegisterPage from "./pages/Register/RegisterPage";
+import AuthRoute from "./components/AuthRoute/AuthRoute";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
 
 export default function AppRoutes() {
     return (
@@ -17,7 +19,13 @@ export default function AppRoutes() {
             <Route path="/shop" element={<ShopPage />} /> 
             <Route path="/cart" element={<CartPage />} />
             <Route path="/login" element={<LoginPage />} />    
-            <Route path="/register" element={<RegisterPage />} />  
+            <Route path="/register" element={<RegisterPage />} /> 
+            <Route path="/checkout"
+                element={
+                    <AuthRoute>
+                        <CheckoutPage />
+                    </AuthRoute>
+                }/>
         </Routes>      
     );
 }

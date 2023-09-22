@@ -40,6 +40,7 @@ export default function RegisterPage() {
                         {...register('firstName', {
                             required: true,
                             minLength: 2,
+                            maxLength: 9,
                         })}
                         error={errors.firstName}
                     />

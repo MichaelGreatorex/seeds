@@ -1,15 +1,10 @@
 .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.details {
+.content {
     width: 24rem;
-}
-
-.register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

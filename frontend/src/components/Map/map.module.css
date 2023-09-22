@@ -1,0 +1,10 @@
+.container {
+    position: relative;
+    width: 24rem;
+    height: 16rem;
+}
+
+.map {
+    width: 100% !important;
+    height: 100% !important;
+}
