@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 import seedRouter from './routers/seed.router.js';
 import userRouter from './routers/user.router.js';
+import orderRouter from './routers/order.router.js';
 
 import { dbconnect } from './config/database.config.js';
 dbconnect();
@@ -22,6 +23,7 @@ app.use(
 
 app.use('/api/seeds', seedRouter);
 app.use('/api/users', userRouter);
+app.use('/api/users', orderRouter);
 
 const PORT = 4000;
 app.listen(PORT, () => {

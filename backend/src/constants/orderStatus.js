@@ -1,10 +1,7 @@
 export const OrderStatus = {
     NEW: 'NEW',
-    PAID: 'PAID',
+    PAYED: 'PAYED',
+    SHIPPED: 'SHIPPED',
     CANCELED: 'CANCELED',
-    DISPATCHED: 'DISPATCHED',
-    DELIVERED: 'DELIVERED',
-    RETURNED: 'RETURNED',
     REFUNDED: 'REFUNDED',
-    PARTREFUNDED: 'PART REFUNDED',
-};
+  };
