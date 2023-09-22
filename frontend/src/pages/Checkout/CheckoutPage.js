@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useCart } from "../../hooks/useCart";
 import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
@@ -43,12 +43,33 @@ export default function CheckoutPage() {
             >
                 <div className={classes.content}>
                     <Title title="Order Summary"/>
-                    <div className={classes.inputs}>
+                    <OrderItemsList order={order} />
+
+                    
+                </div>
+                <div className={classes.content}>
+                    <div className={classes.map_section}>
+                        <Title title="Select Address on Map" />
+                        <Map 
+                            location={order.addressLatLng}
+                            onChange={latLng => {
+                                console.log(latLng);
+                                setOrder({...order, addressLatLng: latLng });
+                            }}                    
+                        />
+                        <div className={classes.inputs}>
                         <Input 
-                        defaultValue={user.firstName + ` ` + user.lastName}
-                        label="Name"
+                        defaultValue={user.firstName}
+                        label="First Name"
+                        {...register('firstName')}
+                        error={errors.firstName}
+                        />
+
+                        <Input 
+                        defaultValue={user.lastName}
+                        label="Last Name"
                         {...register('lastName')}
-                        error={errors.lastName}
+                        error={errors.firstName}
                         />
                         
                         <Input 
@@ -58,28 +79,17 @@ export default function CheckoutPage() {
                         error={errors.address}
                         />                
                     </div>
-                    <OrderItemsList order={order} />
-                </div>
+                    </div>
 
-                <div>
-                    <Title title="Select Delivery Location" />
-                    <Map
-                        location={order.addressLatLng}
-                        onChange={latLng => {
-                            setOrder({...order, addressLatLng: latLng});
-                        }}                    
-                    />
-                </div>
-
-                <div className={classes.buttons_container}>
-                    <div className={classes.buttons}>
-                        <Button 
-                            type="submit"
-                            text="Go To Payment"
-                        />
+                    <div className={classes.buttons_container}>
+                        <div className={classes.buttons}>
+                            <Button 
+                                type="submit"
+                                text="Go To Payment"
+                            />
+                        </div>
                     </div>
                 </div>
-
             </form>
         </>
     );

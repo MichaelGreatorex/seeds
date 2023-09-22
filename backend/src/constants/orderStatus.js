@@ -1,0 +1,10 @@
+export const OrderStatus = {
+    NEW: 'NEW',
+    PAID: 'PAID',
+    CANCELED: 'CANCELED',
+    DISPATCHED: 'DISPATCHED',
+    DELIVERED: 'DELIVERED',
+    RETURNED: 'RETURNED',
+    REFUNDED: 'REFUNDED',
+    PARTREFUNDED: 'PART REFUNDED',
+};
