@@ -1,4 +1,4 @@
-
+import { OrderStatus } from "./constants/orderStatus.js";
 
 export const sample_tags = [
     { name: 'all', count: '5'},
@@ -112,4 +112,70 @@ export const sample_seeds = [
         harvest: ['Aug','Sep', 'Oct', 'Nov'],
         description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum est excepturi natus est deserunt eligendi in consequatur temporibus et temporibus dolor. Eum minus nobis aut molestiae sunt et modi consequatur sit sapiente magni aut aliquam porro. Aut sequi illum ea esse vero et natus temporibus non reiciendis consequatur eos voluptatem animi quo reprehenderit sapiente. Ea dignissimos explicabo qui consequatur debitis et consequatur illum est provident quia.'
     },
+];
+
+export const sample_orders = [
+    {
+        firstName: 'Alex',
+        lastName: 'Jacobs',
+        address: 'Hammersmith',
+        addressLatLng: {
+          "lat": "42.9477",
+          "lng": "-68.8798"
+        },
+        paymentId: '7654321',
+        items: [	
+          {
+          seed: {
+            name: 'carrot',
+            price: 1.2,
+            sow: ['Feb', 'Mar', 'Apr'],
+            position: 'direct sun',
+            inout: 'outdoor',
+            germination: '7-10',
+            colour: ['orange','green'],
+            height: 0.2,
+            stars: 5,
+            tags: ['root','vegetables'],
+            imageUrl: 'carrot.png',
+            favourite: false,
+            flowers: ['-'],
+            harvest: ['Aug','Sep', 'Oct', 'Nov'],
+            description: 'Lorem ipsum dolor sit amet. Et error ullam qui beata'
+          },
+          quantity: 2,
+          
+          },
+          {
+          seed: {
+            name: 'pea',
+            price: 1.5,
+            sow: ['Apr', 'May'],
+            position: 'direct sun',
+            inout: 'outdoor',
+            germination: '7-10',
+            colour: ['green'],
+            height: 1.8,
+            stars: 2,
+            tags: ['legumes', 'vegetables'],
+            imageUrl: 'pea.png',
+            favourite: true,
+            flowers: ['Jun', 'Jul',],
+            harvest: ['Jul','Aug'],
+            description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum'
+          },
+          quantity: 1,
+          
+          }
+        ],
+        status: 'NEW',
+        user: {
+          firstName: 'Alex',
+          lastName: 'Jacobs',
+          email: 'alex@gmail.com',
+          password: '54321',
+          address: 'Miami',
+          isAdmin: false
+        } 
+      }
 ];

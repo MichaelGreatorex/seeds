@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose';
 import { OrderStatus } from '../constants/orderStatus.js';
 import { SeedModel } from './seed.model.js';
+import { UserModel } from './user.model.js';
 
 export const LatLngSchema = new Schema(
   {
@@ -10,21 +11,23 @@ export const LatLngSchema = new Schema(
   {
     _id: false,
   }
+
 );
 
 export const OrderItemSchema = new Schema(
   {
     seed: { type: SeedModel.schema, required: true },
-    price: { type: Number, required: true },
     quantity: { type: Number, required: true },
+    
   },
   {
     _id: false,
   }
+
 );
 
 OrderItemSchema.pre('validate', function (next) {
-  this.price = this.seed.price * this.quantity;
+  this.seedSubtotal = this.seed.price * this.quantity;
   next();
 });
 
@@ -35,10 +38,10 @@ const orderSchema = new Schema(
     address: { type: String, required: true },
     addressLatLng: { type: LatLngSchema, required: true },
     paymentId: { type: String },
-    totalPrice: { type: Number, required: true },
-    items: { type: [OrderItemSchema], required: true },
+    items: { type: [OrderItemSchema], required: true},
+
     status: { type: String, default: OrderStatus.NEW },
-    user: { type: Schema.Types.ObjectId, required: true },
+    user: { type: UserModel.schema, required: true },
   },
   {
     timestamps: true,

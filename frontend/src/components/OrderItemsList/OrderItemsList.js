@@ -20,7 +20,9 @@ export default function OrderItemsList( {order} ) {
                                 </Link>
                             </td>
                             <td>{item.seed.name}</td>
-
+                            <td>
+                                <Price price={item.seed.price} />
+                            </td>
                             <td>{item.quantity}</td>
                             <td>
                                 <Price price={item.price} />
@@ -29,7 +31,7 @@ export default function OrderItemsList( {order} ) {
                     ))}
 
                     <tr>
-                        <td colSpan="2"></td>
+                        <td colSpan="3"></td>
                         <td>
                             <strong>Total :</strong>
                         </td>

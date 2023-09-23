@@ -1,8 +1,10 @@
 import { connect, set } from 'mongoose';
 import { UserModel } from '../models/user.model.js';
 import { SeedModel } from '../models/seed.model.js';
+import { OrderModel } from '../models/order.model.js';
 import { sample_seeds } from '../data.js';
 import { sample_users } from '../data.js';
+import { sample_orders } from '../data.js';
 import bcrypt from 'bcryptjs';
 
 const PASSWORD_HASH_SALT_ROUNDS = 10;
@@ -17,6 +19,7 @@ export const dbconnect = async () => {
         });
         await initUsers();
         await initSeeds();
+        await initOrders();
         console.log('connect successfully---');
     }   catch (error) {
         console.log(error);
@@ -50,6 +53,20 @@ async function initUsers() {
       await SeedModel.create(seed);
     }
   
-    console.log('Foods seed Is Done!');
+    console.log('Seeds init is now Done!');
+  }
+
+  async function initOrders() {
+    const orders = await OrderModel.countDocuments();
+    if (orders > 0) {
+      console.log('Orders init is already done!');
+      return;
+    }
+  
+    for (const order of sample_orders) {
+      await OrderModel.create(order);
+    }
+  
+    console.log('Orders init is now Done!');
   }
 
