@@ -1,4 +1,5 @@
-import * as verify from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
+const { verify } = jwt;
 import { UNAUTHORIZED } from '../constants/httpStatus.js';
 
 export default (req, res, next) => {
@@ -6,7 +7,7 @@ export default (req, res, next) => {
   if (!token) return res.status(UNAUTHORIZED).send();
 
   try {
-    const decoded = verify.verify(token, process.env.JWT_SECRET);
+    const decoded = verify(token, process.env.JWT_SECRET);
     req.user = decoded;
   } catch (error) {
     res.status(UNAUTHORIZED).send();
@@ -14,3 +15,4 @@ export default (req, res, next) => {
 
   return next();
 };
+

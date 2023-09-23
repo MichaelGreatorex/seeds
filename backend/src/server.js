@@ -23,7 +23,7 @@ app.use(
 
 app.use('/api/seeds', seedRouter);
 app.use('/api/users', userRouter);
-app.use('/api/users', orderRouter);
+app.use('/api/orders', orderRouter);
 
 const PORT = 4000;
 app.listen(PORT, () => {
