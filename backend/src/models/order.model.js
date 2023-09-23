@@ -18,7 +18,7 @@ export const OrderItemSchema = new Schema(
   {
     seed: { type: SeedModel.schema, required: true },
     quantity: { type: Number, required: true },
-    
+    price: { type: Number, required: true }
   },
   {
     _id: false,
@@ -27,8 +27,9 @@ export const OrderItemSchema = new Schema(
 );
 
 OrderItemSchema.pre('validate', function (next) {
-  this.seedSubtotal = this.seed.price * this.quantity;
+  this.price = this.seed.price * this.quantity;
   next();
+  
 });
 
 const orderSchema = new Schema(
@@ -39,7 +40,7 @@ const orderSchema = new Schema(
     addressLatLng: { type: LatLngSchema, required: true },
     paymentId: { type: String },
     items: { type: [OrderItemSchema], required: true},
-
+    totalPrice: { type: Number, required: true},
     status: { type: String, default: OrderStatus.NEW },
     user: { type: UserModel.schema, required: true },
   },

@@ -144,7 +144,7 @@ export const sample_orders = [
             description: 'Lorem ipsum dolor sit amet. Et error ullam qui beata'
           },
           quantity: 2,
-          
+          price: 200
           },
           {
           seed: {
@@ -165,9 +165,10 @@ export const sample_orders = [
             description: 'Lorem ipsum dolor sit amet. Et error ullam qui beatae temporibus et accusamus ipsum'
           },
           quantity: 1,
-          
+          price: 100
           }
         ],
+        totalPrice: 3.9,
         status: 'NEW',
         user: {
           firstName: 'Alex',
