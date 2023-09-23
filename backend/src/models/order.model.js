@@ -24,7 +24,7 @@ export const OrderItemSchema = new Schema(
 );
 
 OrderItemSchema.pre('validate', function (next) {
-  this.price = this.food.price * this.quantity;
+  this.price = this.seed.price * this.quantity;
   next();
 });
 
