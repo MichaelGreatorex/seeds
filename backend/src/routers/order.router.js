@@ -7,24 +7,27 @@ import { OrderStatus } from '../constants/orderStatus.js';
 import { UserModel } from '../models/user.model.js';
 
 const router = Router();
-router.use(auth);
+// router.use(auth);
 
 router.post(
   '/create',
-  handler(async (req, res) => {
-    const order = req.body;
+handler(async (req, res) => {
+  const { firstName, lastName, address, addressLatLng, paymentId, items, totalPrice } = req.body;
 
-    if (order.items.length <= 0) res.status(BAD_REQUEST).send('Cart Is Empty!');
-
-    await OrderModel.deleteOne({
-      user: req.user.id,
-      status: OrderStatus.NEW,
-    });
-
-    const newOrder = new OrderModel({ ...order, user: req.user.id });
-    await newOrder.save();
-    res.send(newOrder);
+  const newOrder = {
+    firstName,
+    lastName,
+    address,
+    addressLatLng,
+    paymentId,
+    items,
+    totalPrice,
+  };
+  const result = await OrderModel.create(newOrder);
+  res.send((result));
   })
 );
+
+
 
 export default router;

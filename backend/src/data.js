@@ -170,13 +170,5 @@ export const sample_orders = [
         ],
         totalPrice: 3.9,
         status: 'NEW',
-        user: {
-          firstName: 'Alex',
-          lastName: 'Jacobs',
-          email: 'alex@gmail.com',
-          password: '54321',
-          address: 'Miami',
-          isAdmin: false
-        } 
       }
 ];

@@ -42,7 +42,6 @@ const orderSchema = new Schema(
     items: { type: [OrderItemSchema], required: true},
     totalPrice: { type: Number, required: true},
     status: { type: String, default: OrderStatus.NEW },
-    user: { type: UserModel.schema, required: true },
   },
   {
     timestamps: true,
