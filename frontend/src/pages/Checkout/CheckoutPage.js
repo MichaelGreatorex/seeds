@@ -20,6 +20,9 @@ export default function CheckoutPage() {
     const navigate = useNavigate();
     const [order, setOrder] = useState({...cart});
 
+    const { clearCart } = useCart();
+    
+
     const {
         register,
         formState: { errors },
@@ -29,7 +32,9 @@ export default function CheckoutPage() {
     const submit = async data => {
 
         await createOrder({...order, firstName: data.firstName, lastName: data.lastName, address: data.address});
+        clearCart();
         navigate('/payment');
+        // delete cart items from local storage
     };
 
     return (
@@ -77,6 +82,7 @@ export default function CheckoutPage() {
                             <Button 
                                 type="submit"
                                 text="Go To Payment"
+                                
                             />
                         </div>
                     </div>
