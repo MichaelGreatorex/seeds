@@ -27,10 +27,7 @@ export default function CheckoutPage() {
     } = useForm();
 
     const submit = async data => {
-        if (!order.addressLatLng) {
-            toast.warning('Please select your address on the map');
-            return;
-        }
+
         await createOrder({...order, firstName: data.firstName, lastName: data.lastName, address: data.address});
         navigate('/payment');
     };
@@ -50,13 +47,7 @@ export default function CheckoutPage() {
                 <div className={classes.content}>
                     <div className={classes.map_section}>
                         <Title title="Select Address on Map" />
-                        <Map 
-                            location={order.addressLatLng}
-                            onChange={latLng => {
-                                console.log(latLng);
-                                setOrder({...order, addressLatLng: latLng });
-                            }}                    
-                        />
+
                         <div className={classes.inputs}>
                         <Input 
                         defaultValue={user.firstName}

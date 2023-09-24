@@ -12,13 +12,12 @@ const router = Router();
 router.post(
   '/create',
 handler(async (req, res) => {
-  const { firstName, lastName, address, addressLatLng, paymentId, items, totalPrice } = req.body;
+  const { firstName, lastName, address, paymentId, items, totalPrice } = req.body;
 
   const newOrder = {
     firstName,
     lastName,
     address,
-    addressLatLng,
     paymentId,
     items,
     totalPrice,
