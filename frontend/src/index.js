@@ -12,6 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { LoadingProvider } from './hooks/useLoading';
 import './interceptors/authinterceptor';
 
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
